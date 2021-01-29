@@ -14,6 +14,7 @@ let today = "";
 let coffee = "";
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
+
 if(urlParams.has('day')){//Use querry string
     myDay = urlParams.get('day');
     myDay = parseInt(myDay);
@@ -24,28 +25,29 @@ if(urlParams.has('day')){//Use querry string
 function coffeeTemplate(coffee){
     let myReturn = "";
 
-    myReturn = 
+    myReturn = `
         <p>
             <img src="${coffee.pic}" alt=" ${coffee.alt}" id="coffee" />
             <strong id="coffee-highlight" class="feature">${coffee.day}'s Coffee Special:</strong> ${coffee.day}'s daily coffee special is <strong>${coffee.name}</strong>, ${coffee.desc}
         </p>
-    ;
+    `;
 
     return myReturn;
 
 }
+
 switch(myDay){
 
     case 0:
         today = "Sunday";
 
         coffee = {
-            color: "yellow",
+            color: "tan",
             name: "Caramel Latte",
             pic: "images/caramel-latte.jpg",
             alt: "A pic of caramel latte",
             day: "Sunday",
-            desc: Just a whole latte love!
+            desc: `Caramel me please1`
         };
     break;
 
@@ -53,12 +55,12 @@ switch(myDay){
         today = "Monday";
 
         coffee = {
-            color: "lavender",
+            color: "lilac",
             name: "Bubble Tea",
             pic: "images/bubble-tea.jpg",
             alt: "Bubble tea image",
             day: "Monday",
-            desc: Best Bubble Tea!
+            desc: `Please don't burst my bubble!`
         };
     break;
 
@@ -66,24 +68,25 @@ switch(myDay){
         today = "Tuesday";
 
         coffee = {
-            color: "brown",
+            color: "grey",
             name: "Cold Brew",
             pic: "images/cold-brew.jpg",
             alt: "A pic of Cold Brew Coffee",
             day: "Tuesday",
-            desc: For the coffee lovers! A nice glass of cold brew.
+            desc: `No funny busy give it to me straight!`
         };
     break;
-case 3:
+
+    case 3:
         today = "Wednesday";
 
         coffee = {
-            color: "black",
+            color: "orange",
             name: "Black Drip Coffee",
             pic: "images/drip.jpg",
             alt: "A pic of a drip coffee",
             day: "Wednesday",
-            desc: Keep it nice & simple!
+            desc: `Law and Order!`
         };
     break;
 
@@ -91,12 +94,12 @@ case 3:
         today = "Thursday";
 
         coffee = {
-            color: "pink",
+            color: "purple",
             name: "Frappaccino",
             pic: "images/frappaccino.jpg",
             alt: "A picture of frappaccino",
             day: "Thursday",
-            desc: For your sweet tooth
+            desc: `Taste me`
         };
     break;
 
@@ -104,28 +107,29 @@ case 3:
         today = "Friday";
 
         coffee = {
-            color: "blue",
+            color: "green",
             name: "Mocha",
             pic: "images/mocha.jpg",
             alt: "A pic of Mocha",
             day: "Friday",
-            desc: A cute cup of mocha
+            desc: `I gotcha some mocha`
         };
     break;
-case 6:
+
+    case 6:
         today = "Saturday";
 
         coffee = {
-            color: "orange",
+            color: "red",
             name: "Pumpkin Spice Latte",
             pic: "images/pumpkin-spice-latte.jpg",
             alt: "A pic of Pumpkin Spice Latte",
             day: "Saturday",
-            desc: Spooky seasons favorite drink!.
+            desc: `Sugar and spice and everything nice!.`
         };
     break;
 
-
+    
 }
 
 //console.log(urlParams);
@@ -137,3 +141,4 @@ document.getElementsByTagName("HTML")[0].style.backgroundColor = coffee.color;
 document.getElementById("coffee-highlight").style.color = coffee.color;
 
 //alert("Hi, it's " + today)
+
